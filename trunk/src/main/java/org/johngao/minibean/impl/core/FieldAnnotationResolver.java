@@ -2,9 +2,9 @@ package org.johngao.minibean.impl.core;
 
 import java.lang.reflect.Field;
 
-import org.johngao.minbean.core.AnnotationResolver;
 import org.johngao.minibean.bean.annotations.AutoParameters;
 import org.johngao.minibean.bean.annotations.Paramater;
+import org.johngao.minibean.core.AnnotationResolver;
 
 /**
  * 字段注解解析器，用于解析标记了@Paramater的字段
@@ -31,16 +31,21 @@ public class FieldAnnotationResolver extends AnnotationResolver {
 			/* 检测目标对象的指定字段是否包含@Paramater标注 */
 			if (goalObjectField.isAnnotationPresent(Paramater.class)) {
 				/* 获取目标对象的@Paramater注解属性 */
-				Paramater paramaterValue = goalObjectField
+				Paramater goalObjectParamater = goalObjectField
 						.getAnnotation(Paramater.class);
-				if (0 != paramaterValue.value().length()
-						&& null != paramaterValue.value()) {
+				if (0 != goalObjectParamater.value().length()
+						&& null != goalObjectParamater.value()) {
 					/* 检测目标对象字段是否匹配源对象字段 */
 					checkFields(goalObject, sourceObject, goalObjectField,
-							paramaterValue.value());
-				} else if (0 != paramaterValue.names().length
-						&& null != paramaterValue.names()) {
-					for (String fileName : paramaterValue.names()) {
+							goalObjectParamater.value());
+				} else if (0 != goalObjectParamater.name().length()
+						&& null != goalObjectParamater.name()) {
+					/* 检测目标对象字段是否匹配源对象字段 */
+					checkFields(goalObject, sourceObject, goalObjectField,
+							goalObjectParamater.name());
+				} else if (0 != goalObjectParamater.names().length
+						&& null != goalObjectParamater.names()) {
+					for (String fileName : goalObjectParamater.names()) {
 						/* 检测目标对象字段是否匹配源对象字段 */
 						if (checkFields(goalObject, sourceObject,
 								goalObjectField, fileName))

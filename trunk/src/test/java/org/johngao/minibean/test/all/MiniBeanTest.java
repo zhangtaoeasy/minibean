@@ -159,4 +159,19 @@ public class MiniBeanTest {
 		AnnotationContext.setParams(goalObject, sourceObject);
 		System.out.println("耗时：" + (System.currentTimeMillis() - startTime) + "ms");
 	}
+	
+
+	@Test
+	public void test9() {
+		TestBeanA sourceObject = new TestBeanA();
+		sourceObject.setId(1);
+		sourceObject.setName("JohnGao");
+		sourceObject.setPwd("123456");
+
+		TestBeanI goalObject = new TestBeanI();
+		AnnotationContext.setParams(goalObject, sourceObject);
+		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
+		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
+		Assert.assertNull(goalObject.getPwd());
+	}
 }

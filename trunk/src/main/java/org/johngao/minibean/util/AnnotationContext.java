@@ -2,7 +2,7 @@ package org.johngao.minibean.util;
 
 import java.lang.reflect.Field;
 
-import org.johngao.minbean.core.AnnotationResolver;
+import org.johngao.minibean.core.AnnotationResolver;
 import org.johngao.minibean.impl.core.ClassAnnotationResolver;
 import org.johngao.minibean.impl.core.FieldAnnotationResolver;
 

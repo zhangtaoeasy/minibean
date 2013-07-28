@@ -2,7 +2,7 @@ package org.johngao.minibean.impl.core;
 
 import java.lang.reflect.Field;
 
-import org.johngao.minbean.core.AnnotationResolver;
+import org.johngao.minibean.core.AnnotationResolver;
 
 /**
  * 源对象与目标对象的自动赋值

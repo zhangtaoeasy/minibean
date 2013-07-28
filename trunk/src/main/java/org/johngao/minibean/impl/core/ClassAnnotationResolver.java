@@ -1,7 +1,7 @@
 package org.johngao.minibean.impl.core;
 
-import org.johngao.minbean.core.AnnotationResolver;
 import org.johngao.minibean.bean.annotations.Assignment;
+import org.johngao.minibean.core.AnnotationResolver;
 
 /**
  * 类型注解解析器，用于解析标记了@Assignment的类型
