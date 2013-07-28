@@ -6,7 +6,7 @@ import org.johngao.minibean.core.AnnotationResolver;
 import org.johngao.minibean.impl.core.ClassAnnotationResolver;
 import org.johngao.minibean.impl.core.FieldAnnotationResolver;
 
-public abstract class AnnotationContext {
+public abstract class BeanContext {
 	/**
 	 * 调用自动赋值，支持任意修饰字段
 	 * 
