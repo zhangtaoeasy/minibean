@@ -4,7 +4,7 @@ import junit.framework.Assert;
 
 import org.johngao.minibean.bean.annotations.Assignment;
 import org.johngao.minibean.bean.annotations.AutoParameters;
-import org.johngao.minibean.util.AnnotationContext;
+import org.johngao.minibean.util.BeanContext;
 import org.junit.Test;
 
 public class MiniBeanTest {
@@ -16,7 +16,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanB goalObject = new TestBeanB();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
 		Assert.assertEquals(goalObject.getPwd(), sourceObject.getPwd());
@@ -30,7 +30,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanC goalObject = new TestBeanC();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId2(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName2(), sourceObject.getName());
 		Assert.assertEquals(goalObject.getPwd2(), sourceObject.getPwd());
@@ -44,7 +44,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanD goalObject = new TestBeanD();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId4(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName4(), sourceObject.getName());
 		Assert.assertEquals(goalObject.getPwd4(), sourceObject.getPwd());
@@ -58,7 +58,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanE goalObject = new TestBeanE();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
 		Assert.assertEquals(goalObject.getPwd(), sourceObject.getPwd());
@@ -72,7 +72,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanF goalObject = new TestBeanF();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName2(), sourceObject.getName());
 		Assert.assertEquals(goalObject.getPwd2(), sourceObject.getPwd());
@@ -86,7 +86,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanG goalObject = new TestBeanG();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName2(), sourceObject.getName());
 		Assert.assertNull(goalObject.getPwd());
@@ -100,7 +100,7 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanH goalObject = new TestBeanH();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(0, goalObject.getId());
 		Assert.assertNull(goalObject.getName2());
 		Assert.assertNull(goalObject.getPwd());
@@ -156,7 +156,7 @@ public class MiniBeanTest {
 		sourceObject.setValue2(new byte[1024 * 1024 * 50]);
 		TestBeanJ goalObject = new TestBeanJ();
 		long startTime = System.currentTimeMillis();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		System.out.println("耗时：" + (System.currentTimeMillis() - startTime) + "ms");
 	}
 	
@@ -169,9 +169,10 @@ public class MiniBeanTest {
 		sourceObject.setPwd("123456");
 
 		TestBeanI goalObject = new TestBeanI();
-		AnnotationContext.setParams(goalObject, sourceObject);
+		BeanContext.setParams(goalObject, sourceObject);
 		Assert.assertEquals(goalObject.getId(), sourceObject.getId());
 		Assert.assertEquals(goalObject.getName(), sourceObject.getName());
 		Assert.assertNull(goalObject.getPwd());
+		System.out.println(goalObject.getId());
 	}
 }
